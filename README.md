@@ -49,7 +49,8 @@
 `npm star`
 
 后，在弹出的浏览器 `localhost://3000` 页面下能看到页面展示出来，如下图：
-![react]https://github.com/lijinping2017/react-router-redux-saga-demo/raw/master/reactStack-images/react.jpg)
+
+![react](https://github.com/lijinping2017/react-router-redux-saga-demo/raw/master/reactStack-images/react.jpg)
 
 就说明项目能正常运行成功了。
 
