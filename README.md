@@ -1,4 +1,4 @@
-# 基于create-react-app引入router、redux、saga技术栈的脚手架搭建 
+# 基于create-react-app引入router、redux、saga技术栈的搭建 
 
 
 ## 一、背景说明
@@ -49,7 +49,7 @@
 `npm star`
 
 后，在弹出的浏览器 `localhost://3000` 页面下能看到页面展示出来，如下图：
-![react](https://github.com/lijinping2017/redux-saga-demo/raw/master/redux-images/react.jpg)
+![react]https://github.com/lijinping2017/react-router-redux-saga-demo/raw/master/reactStack-images/react.jpg)
 
 就说明项目能正常运行成功了。
 
@@ -71,13 +71,13 @@
 
 (2)安装完成后，打开 `package.json` 文件，我们会看到 `devDependencies` 多了刚安装的四个插件的名称及版本号信息，如图所示：
 
-![package-json](https://github.com/lijinping2017/redux-saga-demo/raw/master/redux-images/package-json.jpg)
+![package-json](https://github.com/lijinping2017/react-router-redux-saga-demo/raw/master/reactStack-images/package-json.jpg)
 
 此时项目就可以使用 `router`、`redux`、`react-redux`、 `redux-saga` 这四个插件了。
 
 ### 4、使用Router的步骤
 
-##### (1)、创建router组件
+#### (1)、创建router组件
 
 在 `src` 文件夹下创建一个名为 `components` 的文件夹，用来存放项目的自定义组件，在`components` 文件夹下创建三个 `js` 文件，分别为 `Home.js`、 `News.js`、 `MyRoter.js` 代码如下：
 
@@ -156,9 +156,9 @@ MyRouter.js
 	
 	export default MyRouter;
 
-##### (2)、修改App.js
+#### (2)、修改App.js
 
-此时使用有 `router` 的组件已经创建成功了，这时我们需要在App主组件中挂载渲染我们的 `MyRoter` 组件，`App.js` 的代码如下：
+此时使用有 `router` 的组件已经创建成功了，这时我们需要在 `App` 主组件中挂载渲染我们的 `MyRoter` 组件，`App.js` 的代码如下：
 
 	
 App.js
@@ -177,17 +177,19 @@ App.js
 	
 	export default App;
 
-##### (3)、测试router页面跳转效果
+#### (3)、测试router页面跳转效果
 
 这时我们需要在浏览器中查看我们编写的代码是否在页面上生效，重新启动项目，在命令行中输入
 
 `npm start`
 
 启动成功后在浏览器中 `localhost://3000` 中会看到新的页面，此时页面是这样的：
-![home](https://github.com/lijinping2017/react-router-demo/raw/master/docImages/home.jpg)
+
+![home](https://github.com/lijinping2017/react-router-redux-saga-demo/raw/master/reactStack-images/router-home.jpg)
 
 出现这样的页面就说明项目没有错误，达到了我们想要的效果，这时要验证一下点击链接时是否能进行页面跳转，当点击新闻链接的时候，页面展示的是新闻组件的内容，如下图:
-![news](https://github.com/lijinping2017/react-router-demo/raw/master/docImages/news.jpg)
+
+![news](https://github.com/lijinping2017/react-router-redux-saga-demo/raw/master/reactStack-images/router-news.jpg)
 
 点击首页链接，展示的是首页的内容，因此实现了页面的跳转了。
 
@@ -195,11 +197,11 @@ App.js
 
 ### 5、使用redux的步骤
 
-下面我们以一个计数器为例，我们为了页面具有逻辑性，基于上面旅游的跳转，我们想要页面加载完成的时候在首页 `Home.js` 组件中显示用 `redux` 完成的计数器效果，具体操作如下：
+下面我们以一个计数器为例，我们为了页面具有逻辑性，基于上面路由的跳转，我们想要页面加载完成的时候在首页 `Home.js` 组件中显示使用 `redux` 完成的计数器效果，具体操作如下：
 
-##### (1)、修改Home.js
+#### (1)、修改Home.js
 
-修改Home.js，使得在Home.js中使用redux实现计数器效果，代码如下：
+修改 `Home.js`，使得在 `Home.js` 中使用 `redux` 实现计数器效果，代码如下：
 
 Home.js
 
@@ -252,7 +254,7 @@ Home.js
 `Home.js` 的头部通过 `import { increaseAction, decreaseAction } from '../actions.js`语句引入 `increaseAction` 和 `decreaseAction`，`actions.js` 文件代码具体见下一步操作。
 
 
-##### (2)、编写actions.js、reducer.js
+#### (2)、编写actions.js、reducer.js
 
 在 `src` 文件夹下创建两个 `js` 文件，分别为 `actions.js` 和 `reducer.js`,具体代码如下：
 
@@ -294,7 +296,7 @@ reducer.js
 
 使用combineReducers()方法将多个reducer以对象的形式包含起来，实现了store树中只有一个根节点。
 
-##### (3)、修改index.js
+#### (3)、修改index.js
 
 此时要将 `reducer` 处理返回的 `state` 值放入 `store` 树上，因此要修改 `index.js` 代码，具体代码如下：
 
@@ -321,20 +323,21 @@ index.js
 	
 	serviceWorker.unregister();	
 
-##### (4)、测试redux项目是否成功
+#### (4)、测试redux项目是否成功
 
 到这里使用 `redux` 的步骤基本完成了，这时我们需要在浏览器中查看我们编写的代码是否在页面上生效，在浏览器 `localhost://3000` 页面中刷新一下，此时页面是这样的：
 
-![redux](https://github.com/lijinping2017/react-redux-demo/raw/master/redux-images/redux.jpg)
+![redux](https://github.com/lijinping2017/react-router-redux-saga-demo/raw/master/reactStack-images/redux-home.jpg)
 
 出现这样的页面就说明项目没有错误，达到了我们想要的效果，这时要验证一下点击**增加**按钮数值是否**加1**，点击**减少**按钮时数值是否**减1**，测试结果如下：
 
 点击**增加**按钮：
-![increase](https://github.com/lijinping2017/react-redux-demo/raw/master/redux-images/add.jpg)
+
+![increase](https://github.com/lijinping2017/react-router-redux-saga-demo/raw/master/reactStack-images/redux-add.jpg)
 
 点击**减少**按钮：
 
-![decrease](https://github.com/lijinping2017/react-redux-demo/raw/master/redux-images/sub.jpg)
+![decrease](https://github.com/lijinping2017/react-router-redux-saga-demo/raw/master/reactStack-images/redux-sub.jpg)
 
 此时的页面效果可以说明了我们已经完成了 `react` 中结合了 `router` 和 `redux` 实现页面跳转和计数器的效果了。
 
@@ -342,9 +345,9 @@ index.js
 
 ### 6、使用saga的步骤
 
-下面我们通过使用 `saga` 实现异步请求数据，想要在点击**新闻链接**的时候跳转要 `New.js` 组件并点击获取数据按钮来实现将异步请求回来的数据展现在页面上。
+下面我们通过使用 `saga` 实现异步请求数据，想要在点击**新闻链接**的时候跳转要 `New.js` 组件并**点击获取数据按钮**来实现将异步请求回来的数据展现在页面上。
 
-##### (1)、修改News.js
+#### (1)、修改News.js
 
 News.js
 
@@ -400,7 +403,7 @@ News.js
 
 
 
-##### (2)、创建saga.js文件
+#### (2)、创建saga.js文件
 
 首先在 `src` 文件夹下创建一个 `saga.js` 文件，用于编写 `saga` 异步操作的函数，具体代码如下：
 
@@ -436,7 +439,7 @@ saga.js
 安装完后就可以在 `saga.js` 文件头部引用 `saga` 了， `takeEvery()` 用来监听所有 `dispath` 出来的 `action`，当 `action.type`  匹配时就触发 `workSaga` ,`call()` 用来发送指令，由 `saga` 中间件去执行获取异步数据请求操作，`put()` 用来派发一个 `action`，用于 `reducer` 接受 `action`，处理 `state`。
 
 
-##### (3)、修改actions.js、reducer.js
+#### (3)、修改actions.js、reducer.js
 
 在 `actions.js` 中新增两个 `action` 对象，并在 `reducer.js` 文件中新增对匹配`action.type` 的场景操作 `state`。代码如下：
 
@@ -497,7 +500,7 @@ reducer.js
 	export default rootReducer;
 
 
-##### (4)、修改index.js
+#### (4)、修改index.js
 
 此时使用到了 `saga` 中间件，并使 `saga` 运行起来，因此要修改 `index.js` 文件代码，具体代码如下：
 
@@ -532,22 +535,26 @@ index.js
 	serviceWorker.unregister();
 
 
-##### (5)、测试saga项目是否成功
+#### (5)、测试saga项目是否成功
 
 到这里使用 `saga` 的步骤基本完成了，这时我们需要在浏览器中查看我们编写的代码是否在页面上生效，因为需要刷新浏览器 `localhost://3000` 页面，此时页面是这样的：
-![saga](https://github.com/lijinping2017/redux-saga-demo/raw/master/redux-images/saga.jpg)
+
+![saga](https://github.com/lijinping2017/react-router-redux-saga-demo/raw/master/reactStack-images/redux-home.jpg)
 
 当我们点击**新闻按钮**时会跳到**新闻页面**，此时的页面是这样的：
-![saga](https://github.com/lijinping2017/redux-saga-demo/raw/master/redux-images/saga.jpg)
+
+![saga](https://github.com/lijinping2017/react-router-redux-saga-demo/raw/master/reactStack-images/saga-news.jpg)
 
 出现这样的页面就说明项目没有错误，达到了我们想要的效果，这时要验证一下点击**点击获取数据**按钮时，是否在页面中将异步数据展示出来，测试结果如下：
 
 点击**点击获取数据**按钮：
-![getdata](https://github.com/lijinping2017/redux-saga-demo/raw/master/redux-images/saga-getdata.jpg)
+
+![getdata](https://github.com/lijinping2017/react-router-redux-saga-demo/raw/master/reactStack-images/saga-getData.jpg)
 
 
 好了，此时的页面效果可以说明了我们成功的实现了 `saga` 来获取异步数据的效果了。
 
-本节我们已经完成了基于 `create-react-app` 引入 `router`、`redux`、`saga` 技术栈的脚手架搭建，整个流程中使用到了 `router` 使用页面的跳转，并在页面中方便的实现了使用 `redux` 的`store` 树来获取数据的更新，已经通过 `saga` 来实现以同步的方法实现异步获取数据的操作，整个`react` 技术栈在一个复杂的网站中就显得尤为的重要了。
+### 7、总结
+本节我们已经完成了基于 `create-react-app` 引入 `router`、`redux`、`saga` 技术栈的脚手架搭建，整个流程中使用到了 `router` 实现页面的跳转，并在组件中方便的实现了使用 `redux` 的`store` 树来获取数据的并实现页面的更新，以及通过 `saga` 来实现以同步的方法处理异步获取数据的操作，整个`react` 技术栈在一个复杂的网站中就显得尤为的重要了。
 
 
